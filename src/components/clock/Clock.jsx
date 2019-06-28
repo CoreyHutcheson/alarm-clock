@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
+
 import styles from "./style.module.scss";
+import { getTime } from "utils/getTime";
 
-import { getTime } from "./getTime";
-
-function App() {
+export const Clock = () => {
   const [currentTime, setCurrentTime] = useState(getTime());
 
   useEffect(() => {
@@ -17,6 +17,4 @@ function App() {
       <div className={styles.time}>{currentTime}</div>
     </div>
   );
-}
-
-export default App;
+};
