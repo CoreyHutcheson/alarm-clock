@@ -1,9 +1,9 @@
 import React from "react";
-import { Clock } from "components/clock";
+import { Alarm } from "components/alarm";
 
 const App = () => (
   <div>
-    <Clock />
+    <Alarm />
     <div />
   </div>
 );
