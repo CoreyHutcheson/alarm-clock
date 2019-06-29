@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import styles from "./style.module.scss";
 
@@ -18,7 +19,7 @@ const formatHours = num => {
   return num < 10 || (num > 12 && num < 22) ? `&nbsp;&nbsp;${str}` : str;
 };
 
-export const AlarmOptions = () => {
+export const AlarmOptions = ({ handleHourChange, handleMinuteChange }) => {
   const hourOptions = [];
   const minuteOptions = [];
 
@@ -32,18 +33,25 @@ export const AlarmOptions = () => {
 
   return (
     <>
-      <select name="hour">
+      <select name="hour" onChange={handleHourChange}>
         <option value="OFF">&nbsp;&nbsp;OFF</option>
         {hourOptions.map(val => (
           <Option key={val} val={val} text={formatHours(val)} />
         ))}
       </select>
+
       <span>:</span>
-      <select name="minutes">
+
+      <select name="minutes" onChange={handleMinuteChange}>
         {minuteOptions.map(val => (
           <Option key={val} val={val} text={val < 10 ? "0" + val : val} />
         ))}
       </select>
     </>
   );
+};
+
+AlarmOptions.propTypes = {
+  handleHourChange: PropTypes.func.isRequired,
+  handleMinuteChange: PropTypes.func.isRequired
 };
