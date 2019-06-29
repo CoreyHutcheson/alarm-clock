@@ -40,7 +40,7 @@ export const AlarmOptions = ({ handleHourChange, handleMinuteChange }) => {
         ))}
       </select>
 
-      <span>:</span>
+      <span className={styles.spacer}>:</span>
 
       <select name="minutes" onChange={handleMinuteChange}>
         {minuteOptions.map(val => (
