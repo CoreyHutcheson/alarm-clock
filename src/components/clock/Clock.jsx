@@ -1,20 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 
 import styles from "./style.module.scss";
-import { getTime } from "utils/getTime";
 
-export const Clock = () => {
-  const [currentTime, setCurrentTime] = useState(getTime());
-
-  useEffect(() => {
-    setInterval(() => {
-      setCurrentTime(getTime());
-    }, 1000);
-  }, []);
-
+export const Clock = ({ time }) => {
   return (
     <div>
-      <div className={styles.time}>{currentTime}</div>
+      <div className={styles.time}>
+        {time.toLocaleTimeString("en-US", {
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit"
+        })}
+      </div>
     </div>
   );
+};
+
+Clock.propTypes = {
+  time: PropTypes.object.isRequired
 };
