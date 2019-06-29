@@ -49,7 +49,7 @@ export const Alarm = () => {
   }, [alarmHours, alarmMinutes]);
 
   return (
-    <div>
+    <div className={styles.alarm}>
       <Clock time={currentTime} />
       <AlarmOptions
         handleHourChange={e => setAlarmHours(e.target.value)}

@@ -32,7 +32,7 @@ export const AlarmOptions = ({ handleHourChange, handleMinuteChange }) => {
   }
 
   return (
-    <>
+    <div>
       <select name="hour" onChange={handleHourChange}>
         <option value="OFF">&nbsp;&nbsp;OFF</option>
         {hourOptions.map(val => (
@@ -47,7 +47,7 @@ export const AlarmOptions = ({ handleHourChange, handleMinuteChange }) => {
           <Option key={val} val={val} text={val < 10 ? "0" + val : val} />
         ))}
       </select>
-    </>
+    </div>
   );
 };
 
