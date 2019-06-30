@@ -23,7 +23,7 @@ export const AlarmOptions = ({ handleHourChange, handleMinuteChange }) => {
   const hourOptions = [];
   const minuteOptions = [];
 
-  for (let i = 1; i <= 24; i++) {
+  for (let i = 1; i <= 23; i++) {
     hourOptions.push(i);
   }
 
@@ -38,6 +38,7 @@ export const AlarmOptions = ({ handleHourChange, handleMinuteChange }) => {
         {hourOptions.map(val => (
           <Option key={val} val={val} text={formatHours(val)} />
         ))}
+        <option value="0">12 AM</option>
       </select>
 
       <span className={styles.spacer}>:</span>
