@@ -2,28 +2,20 @@ import React, { useState, useEffect } from "react";
 
 import { AlarmOptions } from "components/alarm-options";
 import { Clock } from "components/clock";
+import { useCurrentTime } from "utils/useCurrentTime.js";
 import { getNewAlarmTime } from "utils/getNewAlarmTime.js";
 import styles from "./style.module.scss";
 
 export const Alarm = () => {
   const [alarmHours, setAlarmHours] = useState("OFF");
+  const currentTime = useCurrentTime();
   const [alarmMinutes, setAlarmMinutes] = useState(0);
-  const [currentTime, setCurrentTime] = useState(new Date());
   const [alarmTime, setAlarmTime] = useState();
   const [alarmActive, setAlarmActive] = useState(false);
 
   const alarmOffContainerClassName = `${styles.alarmOffContainer} ${
     alarmActive ? styles["alarmOffContainer--active"] : ""
   }`;
-
-  // Updates currentTime every second
-  useEffect(() => {
-    const id = setInterval(() => {
-      setCurrentTime(new Date());
-    }, 1000);
-
-    return () => clearInterval(id);
-  });
 
   // Sets off alarm by comparing currentTime and alarmTime
   useEffect(() => {
