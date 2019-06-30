@@ -19,7 +19,8 @@ const formatHours = num => {
   return num < 10 || (num > 12 && num < 22) ? `&nbsp;&nbsp;${str}` : str;
 };
 
-export const AlarmOptions = ({ handleHourChange, handleMinuteChange }) => {
+export const AlarmOptions = props => {
+  const { handleHourChange, handleMinuteChange } = props;
   const hourOptions = [];
   const minuteOptions = [];
 
@@ -35,9 +36,11 @@ export const AlarmOptions = ({ handleHourChange, handleMinuteChange }) => {
     <div>
       <select name="hour" onChange={handleHourChange}>
         <option value="OFF">&nbsp;&nbsp;OFF</option>
+
         {hourOptions.map(val => (
           <Option key={val} val={val} text={formatHours(val)} />
         ))}
+
         <option value="0">12 AM</option>
       </select>
 

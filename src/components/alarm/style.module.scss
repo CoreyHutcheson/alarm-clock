@@ -4,3 +4,34 @@
   align-items: center;
   justify-content: center;
 }
+
+.alarmOffContainer {
+  display: none;
+  z-index: 999999;
+  background: rgba(0, 0, 0, 0.97);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+
+  &--active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.alarmOffButton {
+  padding: 1rem;
+  background: red;
+  font-weight: 600;
+  font-size: 3rem;
+  cursor: pointer;
+  border-radius: 5px;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}

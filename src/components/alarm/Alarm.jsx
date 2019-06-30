@@ -10,6 +10,11 @@ export const Alarm = () => {
   const [alarmMinutes, setAlarmMinutes] = useState(0);
   const [currentTime, setCurrentTime] = useState(new Date());
   const [alarmTime, setAlarmTime] = useState();
+  const [alarmActive, setAlarmActive] = useState(false);
+
+  const alarmOffContainerClassName = `${styles.alarmOffContainer} ${
+    alarmActive ? styles["alarmOffContainer--active"] : ""
+  }`;
 
   // Updates currentTime every second
   useEffect(() => {
@@ -33,7 +38,7 @@ export const Alarm = () => {
     );
 
     if (diff > 0 && diff < 1000) {
-      alert("ALARM");
+      setAlarmActive(true);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentTime]);
@@ -48,6 +53,10 @@ export const Alarm = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [alarmHours, alarmMinutes]);
 
+  const handleAlarmOff = () => {
+    setAlarmActive(false);
+  };
+
   return (
     <div className={styles.alarm}>
       <Clock time={currentTime} />
@@ -55,6 +64,14 @@ export const Alarm = () => {
         handleHourChange={e => setAlarmHours(e.target.value)}
         handleMinuteChange={e => setAlarmMinutes(e.target.value)}
       />
+
+      <div className={alarmOffContainerClassName}>
+        <div className={styles.alarmOffButton} onClick={handleAlarmOff}>
+          ALARM OFF
+        </div>
+      </div>
+
+      <button onClick={() => setAlarmActive(true)}>TRUE</button>
     </div>
   );
 };
