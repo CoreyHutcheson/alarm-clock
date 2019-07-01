@@ -1,0 +1,19 @@
+.buttonContainer {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  & > div {
+    background: white;
+    padding: 12px 14px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+  }
+  
+  & > div:first-child {
+    margin-right: 1rem;
+  }
+}
