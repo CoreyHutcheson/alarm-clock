@@ -66,6 +66,7 @@ const App = () => {
                   position={alarm.position}
                   handleDeleteAlarmClick={handleDeleteAlarmClick}
                   showDeleteButton={true}
+                  grid={true}
                 />
               );
             })}
