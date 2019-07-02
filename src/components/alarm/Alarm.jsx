@@ -9,7 +9,12 @@ import { DeleteButton } from "./DeleteButton.jsx";
 import styles from "./style.module.scss";
 
 export const Alarm = props => {
-  const { alarmKey, position, handleDeleteAlarmClick } = props;
+  const {
+    alarmKey,
+    position,
+    showDeleteButton,
+    handleDeleteAlarmClick
+  } = props;
 
   const [alarmHours, setAlarmHours] = useState("OFF");
   const currentTime = useCurrentTime();
@@ -60,14 +65,14 @@ export const Alarm = props => {
         </div>
       </div>
 
-      <button onClick={() => setAlarmActive(true)}>TRUE</button>
-
-      <DeleteButton {...props} />
+      {showDeleteButton && <DeleteButton {...props} />}
     </div>
   );
 };
 
 Alarm.propTypes = {
   alarmKey: PropTypes.string.isRequired,
-  position: PropTypes.string.isRequired
+  position: PropTypes.string.isRequired,
+  showDeleteButton: PropTypes.bool.isRequired,
+  handleDeleteAlarmClick: PropTypes.func.isRequired
 };
