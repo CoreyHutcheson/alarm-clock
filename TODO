@@ -5,6 +5,11 @@ Todo:
   ☐ Create button to set chosen alarm as "main" alarm
   ✔ Only show delete button if there are multiple alarms @done(19-07-02 08:26)
   ✔ If you delete all but the main alarm, flip card to show main alarm @done(19-07-02 08:26)
+  ☐ When alarm is deleted, it's position in grid doesn't move
 
 Style:
   ✔ Fix font-size for grid alarms @done(19-07-02 08:49)
+
+Bugs:
+  ☐ Error when creating alarms
+    - Can create multiple alarms with same Key or position
