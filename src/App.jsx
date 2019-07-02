@@ -8,8 +8,7 @@ import styles from "./App.module.scss";
 const App = () => {
   const [alarms, setAlarms] = useState([
     {
-      alarmKey: "0",
-      position: "main"
+      position: "0"
     }
   ]);
   const [cardIsFlipped, setCardIsFlipped] = useState(false);
@@ -23,11 +22,12 @@ const App = () => {
 
     if (alarms.length >= 5) return;
 
-    setAlarms([...alarms, { alarmKey: position, position }]);
+    setAlarms([...alarms, { position }]);
+    setCardIsFlipped(true);
   };
 
-  const handleDeleteAlarmClick = alarmKey => {
-    setAlarms(alarms.filter(el => el.alarmKey !== alarmKey));
+  const handleDeleteAlarmClick = position => {
+    setAlarms(alarms.filter(el => el.position !== position));
   };
 
   useEffect(() => {
@@ -46,7 +46,6 @@ const App = () => {
             {/* Render first alarm */}
             {
               <Alarm
-                alarmKey={alarms[0].alarmKey}
                 position={alarms[0].position}
                 handleDeleteAlarmClick={handleDeleteAlarmClick}
                 showDeleteButton={false}
@@ -61,8 +60,7 @@ const App = () => {
 
               return (
                 <Alarm
-                  key={alarm.alarmKey}
-                  alarmKey={alarm.alarmKey}
+                  key={alarm.position}
                   position={alarm.position}
                   handleDeleteAlarmClick={handleDeleteAlarmClick}
                   showDeleteButton={true}

@@ -5,13 +5,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import styles from "./style.module.scss";
 
-export const DeleteButton = ({ alarmKey, handleDeleteAlarmClick, grid }) => {
+export const DeleteButton = ({ position, handleDeleteAlarmClick, grid }) => {
   return (
     <div
       className={`${styles.deleteButton} ${
         grid ? styles.deleteButton__Grid : ""
       }`}
-      onClick={() => handleDeleteAlarmClick(alarmKey)}
+      onClick={() => handleDeleteAlarmClick(position)}
     >
       <FontAwesomeIcon icon={faTimesCircle} />
     </div>
@@ -19,6 +19,6 @@ export const DeleteButton = ({ alarmKey, handleDeleteAlarmClick, grid }) => {
 };
 
 DeleteButton.propTypes = {
-  alarmKey: PropTypes.string.isRequired,
+  position: PropTypes.string.isRequired,
   handleDeleteAlarmClick: PropTypes.func.isRequired
 };

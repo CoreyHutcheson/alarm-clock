@@ -2,9 +2,9 @@
 Todo:
   ✔ Implete digital font for time @started(19-06-27 23:33) @done(19-06-27 23:34) @lasted(1m)
   ✔ Create grid to showcase additional alarms @done(19-07-02 08:26)
-  ☐ Create button to set chosen alarm as "main" alarm
+  ☐ Create button to set chosen alarm as "0" alarm
   ✔ Only show delete button if there are multiple alarms @done(19-07-02 08:26)
-  ✔ If you delete all but the main alarm, flip card to show main alarm @done(19-07-02 08:26)
+  ✔ If you delete all but the 0 alarm, flip card to show 0 alarm @done(19-07-02 08:26)
   ☐ When alarm is deleted, it's position in grid doesn't move
 
 Style:
