@@ -2,6 +2,7 @@
   font-family: "Orbitron";
   font-weight: 600;
   font-size: 2rem;
+  color: rgba(255, 255, 255, 0.87);
 
   @media (min-width: 425px) {
     font-size: 2.5rem;
@@ -13,5 +14,21 @@
 
   @media (min-width: 1024px) {
     font-size: 7.5rem;
+  }
+}
+
+.time__Grid {
+  font-size: 1.1rem;
+
+  @media (min-width: 425px) {
+    font-size: 1.4rem;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 2.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 3.5rem;
   }
 }
