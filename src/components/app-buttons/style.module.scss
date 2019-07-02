@@ -5,15 +5,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   & > div {
     background: white;
     padding: 12px 14px;
     border-radius: 50%;
     font-size: 1.2rem;
   }
-  
-  & > div:first-child {
-    margin-right: 1rem;
+
+  & > div:nth-child(2) {
+    margin-left: 1rem;
   }
 }
