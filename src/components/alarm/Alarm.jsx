@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
 import { AlarmOptions } from "components/alarm-options";
 import { Clock } from "components/clock";
 import { useCurrentTime } from "utils/useCurrentTime.js";
 import { getNewAlarmTime } from "utils/getNewAlarmTime.js";
+import { DeleteButton } from "./DeleteButton.jsx";
 import styles from "./style.module.scss";
 
-export const Alarm = () => {
+export const Alarm = props => {
+  const { alarmKey, position, handleDeleteAlarmClick } = props;
+
   const [alarmHours, setAlarmHours] = useState("OFF");
   const currentTime = useCurrentTime();
   const [alarmMinutes, setAlarmMinutes] = useState(0);
@@ -20,14 +24,6 @@ export const Alarm = () => {
   // Sets off alarm by comparing currentTime and alarmTime
   useEffect(() => {
     const diff = currentTime - alarmTime;
-
-    // TODO: Remove debugging
-    console.log(
-      `Current: ${currentTime}
-      Alarm: ${alarmTime}
-      Diff: ${diff}
-    `
-    );
 
     if (diff > 0 && diff < 1000) {
       setAlarmActive(true);
@@ -52,6 +48,7 @@ export const Alarm = () => {
   return (
     <div className={styles.alarm}>
       <Clock time={currentTime} />
+
       <AlarmOptions
         handleHourChange={e => setAlarmHours(e.target.value)}
         handleMinuteChange={e => setAlarmMinutes(e.target.value)}
@@ -64,6 +61,13 @@ export const Alarm = () => {
       </div>
 
       <button onClick={() => setAlarmActive(true)}>TRUE</button>
+
+      <DeleteButton {...props} />
     </div>
   );
+};
+
+Alarm.propTypes = {
+  alarmKey: PropTypes.string.isRequired,
+  position: PropTypes.string.isRequired
 };

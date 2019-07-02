@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .alarmOffContainer {
@@ -34,4 +35,13 @@
   &:hover {
     transform: scale(1.2);
   }
+}
+
+.deleteButton {
+  background: white;
+  font-size: 2rem;
+  position: absolute;
+  top: -2rem;
+  right: 0;
+  line-height: 1rem;
 }
