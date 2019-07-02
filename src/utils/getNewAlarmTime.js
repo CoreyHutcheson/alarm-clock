@@ -1,5 +1,8 @@
 /**
- * Takes user set alarm hours and minutes and sets the new alarm time.
+ * Compares user set alarm hours/minutes to current time and returns newly set alarm Date
+ * @param {number} hours - Selected hours option
+ * @param {number} minutes - Selected minutes option
+ * @param {object} currentTime - Current date/time
  */
 export const getNewAlarmTime = (hours, minutes, currentTime) => {
   const tempAlarmTime = new Date();
