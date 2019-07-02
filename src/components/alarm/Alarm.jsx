@@ -13,7 +13,8 @@ export const Alarm = props => {
     alarmKey,
     position,
     showDeleteButton,
-    handleDeleteAlarmClick
+    handleDeleteAlarmClick,
+    grid
   } = props;
 
   const [alarmHours, setAlarmHours] = useState("OFF");
@@ -52,7 +53,7 @@ export const Alarm = props => {
 
   return (
     <div className={styles.alarm}>
-      <Clock time={currentTime} />
+      <Clock time={currentTime} grid={grid} />
 
       <AlarmOptions
         handleHourChange={e => setAlarmHours(e.target.value)}
@@ -68,6 +69,10 @@ export const Alarm = props => {
       {showDeleteButton && <DeleteButton {...props} />}
     </div>
   );
+};
+
+Alarm.defaultProps = {
+  grid: false
 };
 
 Alarm.propTypes = {
