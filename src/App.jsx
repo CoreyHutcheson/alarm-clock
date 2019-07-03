@@ -18,11 +18,17 @@ const App = () => {
   };
 
   const handleNewAlarmClick = () => {
-    const position = alarms.length.toString();
-
     if (alarms.length >= 5) return;
 
-    setAlarms([...alarms, { position }]);
+    const getFirstOpenPosition = () => {
+      const possiblePositions = ["0", "1", "2", "3", "4"];
+
+      return possiblePositions.filter(pos => {
+        return !alarms.map(alarm => alarm.position).includes(pos);
+      })[0];
+    };
+
+    setAlarms([...alarms, { position: getFirstOpenPosition() }]);
     setCardIsFlipped(true);
   };
 
