@@ -20,7 +20,7 @@ const formatHours = num => {
 };
 
 export const AlarmOptions = props => {
-  const { handleHourChange, handleMinuteChange } = props;
+  const { handleHourChange, handleMinuteChange, className } = props;
   const hourOptions = [];
   const minuteOptions = [];
 
@@ -33,7 +33,7 @@ export const AlarmOptions = props => {
   }
 
   return (
-    <div>
+    <div className={className}>
       <select name="hour" onChange={handleHourChange}>
         <option value="OFF">&nbsp;&nbsp;OFF</option>
 

@@ -3,8 +3,10 @@ import PropTypes from "prop-types";
 
 import styles from "./style.module.scss";
 
-export const Clock = ({ time, grid }) => (
-  <div className={`${styles.time} ${grid ? styles.time__Grid : ""}`}>
+export const Clock = ({ time, grid, className }) => (
+  <div
+    className={`${styles.time} ${grid ? styles.time__Grid : ""} ${className}`}
+  >
     {time.toLocaleTimeString("en-US", {
       hour: "2-digit",
       minute: "2-digit",
