@@ -5544,6 +5544,11 @@ gzip-size@5.0.0:
     duplexer "^0.1.1"
     pify "^3.0.0"
 
+hacktimer@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/hacktimer/-/hacktimer-1.1.3.tgz#401116d87f98ecb7972ed58dfe82168151a9b9f8"
+  integrity sha1-QBEW2H+Y7LeXLtWN/oIWgVGpufg=
+
 handle-thing@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/handle-thing/-/handle-thing-2.0.0.tgz#0e039695ff50c93fc288557d696f3c1dc6776754"
