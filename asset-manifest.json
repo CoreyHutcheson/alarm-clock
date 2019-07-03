@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/alarm-clock/static/css/main.72990ced.chunk.css",
+    "main.js": "/alarm-clock/static/js/main.07ccfbd2.chunk.js",
+    "main.js.map": "/alarm-clock/static/js/main.07ccfbd2.chunk.js.map",
+    "runtime~main.js": "/alarm-clock/static/js/runtime~main.6257f942.js",
+    "runtime~main.js.map": "/alarm-clock/static/js/runtime~main.6257f942.js.map",
+    "static/js/2.1fba323b.chunk.js": "/alarm-clock/static/js/2.1fba323b.chunk.js",
+    "static/js/2.1fba323b.chunk.js.map": "/alarm-clock/static/js/2.1fba323b.chunk.js.map",
+    "index.html": "/alarm-clock/index.html",
+    "precache-manifest.ffe10eee0de71ec6e2348d877c2e272f.js": "/alarm-clock/precache-manifest.ffe10eee0de71ec6e2348d877c2e272f.js",
+    "service-worker.js": "/alarm-clock/service-worker.js",
+    "static/css/main.72990ced.chunk.css.map": "/alarm-clock/static/css/main.72990ced.chunk.css.map",
+    "static/media/alarm-clock-sound.mp3": "/alarm-clock/static/media/alarm-clock-sound.a5cd1537.mp3"
+  }
+}
