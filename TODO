@@ -6,6 +6,7 @@ Todo:
   ✔ Only show delete button if there are multiple alarms @done(19-07-02 08:26)
   ✔ If you delete all but the 0 alarm, flip card to show 0 alarm @done(19-07-02 08:26)
   ✔ When alarm is deleted, it's position in grid doesn't move @done(19-07-02 20:50)
+  ☐ Deploy to github pages (https://facebook.github.io/create-react-app/docs/deployment)
 
 Style:
   ✔ Fix font-size for grid alarms @done(19-07-02 08:49)
