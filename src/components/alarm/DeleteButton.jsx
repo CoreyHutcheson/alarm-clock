@@ -3,14 +3,12 @@ import PropTypes from "prop-types";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import styles from "./style.module.scss";
+import "./style.scss";
 
 export const DeleteButton = ({ position, handleDeleteAlarmClick, grid }) => {
   return (
     <div
-      className={`${styles.deleteButton} ${
-        grid ? styles.deleteButton__Grid : ""
-      }`}
+      className={`delete-button ${grid ? "delete-button__grid" : ""}`}
       onClick={() => handleDeleteAlarmClick(position)}
     >
       <FontAwesomeIcon icon={faTimesCircle} />

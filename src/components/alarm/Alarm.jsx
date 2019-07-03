@@ -6,20 +6,16 @@ import { Clock } from "components/clock";
 import { useCurrentTime } from "utils/useCurrentTime.js";
 import { getNewAlarmTime } from "utils/getNewAlarmTime.js";
 import { DeleteButton } from "./DeleteButton.jsx";
-import styles from "./style.module.scss";
+import "./style.scss";
 
 export const Alarm = props => {
-  const { showDeleteButton, grid } = props;
+  const { position, showDeleteButton, grid } = props;
 
   const [alarmHours, setAlarmHours] = useState("OFF");
   const currentTime = useCurrentTime();
   const [alarmMinutes, setAlarmMinutes] = useState(0);
   const [alarmTime, setAlarmTime] = useState();
   const [alarmActive, setAlarmActive] = useState(false);
-
-  const alarmOffContainerClassName = `${styles.alarmOffContainer} ${
-    alarmActive ? styles["alarmOffContainer--active"] : ""
-  }`;
 
   // Sets off alarm by comparing currentTime and alarmTime
   useEffect(() => {
@@ -46,7 +42,7 @@ export const Alarm = props => {
   };
 
   return (
-    <div className={styles.alarm}>
+    <div className={`alarm alarm__position--${position}`}>
       <Clock time={currentTime} grid={grid} />
 
       <AlarmOptions
@@ -54,8 +50,12 @@ export const Alarm = props => {
         handleMinuteChange={e => setAlarmMinutes(e.target.value)}
       />
 
-      <div className={alarmOffContainerClassName}>
-        <div className={styles.alarmOffButton} onClick={handleAlarmOff}>
+      <div
+        className={`alarm-off-container ${
+          alarmActive ? "alarm-off-container--active" : ""
+        }`}
+      >
+        <div className="alarm-off-button" onClick={handleAlarmOff}>
           ALARM OFF
         </div>
       </div>
