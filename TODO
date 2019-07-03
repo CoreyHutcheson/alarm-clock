@@ -5,7 +5,7 @@ Todo:
   ☐ Create button to set chosen alarm as "0" alarm
   ✔ Only show delete button if there are multiple alarms @done(19-07-02 08:26)
   ✔ If you delete all but the 0 alarm, flip card to show 0 alarm @done(19-07-02 08:26)
-  ☐ When alarm is deleted, it's position in grid doesn't move
+  ✔ When alarm is deleted, it's position in grid doesn't move @done(19-07-02 20:50)
 
 Style:
   ✔ Fix font-size for grid alarms @done(19-07-02 08:49)
@@ -13,3 +13,6 @@ Style:
 Bugs:
   ☐ Error when creating alarms
     - Can create multiple alarms with same Key or position
+  ☐ Fix inactive tab bug
+    - Alarms not going off if broswer tab is inactive
+    - Use web workers script - https://stackoverflow.com/a/31105348
