@@ -6,14 +6,13 @@ Todo:
   ✔ Only show delete button if there are multiple alarms @done(19-07-02 08:26)
   ✔ If you delete all but the 0 alarm, flip card to show 0 alarm @done(19-07-02 08:26)
   ✔ When alarm is deleted, it's position in grid doesn't move @done(19-07-02 20:50)
-  ☐ Deploy to github pages (https://facebook.github.io/create-react-app/docs/deployment)
+  ✔ Deploy to github pages (https://facebook.github.io/create-react-app/docs/deployment) @done(19-07-03 11:00)
 
 Style:
   ✔ Fix font-size for grid alarms @done(19-07-02 08:49)
 
 Bugs:
-  ☐ Error when creating alarms
+  ✔ Error when creating alarms @done(19-07-03 00:23)
     - Can create multiple alarms with same Key or position
-  ☐ Fix inactive tab bug
-    - Alarms not going off if broswer tab is inactive
+  ✔ Fix inactive tab bug @done(19-07-03 00:23)
     - Use web workers script - https://stackoverflow.com/a/31105348
