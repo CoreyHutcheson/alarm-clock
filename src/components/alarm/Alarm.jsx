@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-import { AlarmOptions } from "components/alarm-options";
 import { Clock } from "components/clock";
+import { AlarmOptions } from "components/alarm-options";
+import { OffButton } from "./OffButton.jsx";
+import { DeleteButton } from "./DeleteButton.jsx";
+import { AlarmSound } from "./AlarmSound.jsx";
+
 import { useCurrentTime } from "utils/useCurrentTime.js";
 import { getNewAlarmTime } from "utils/getNewAlarmTime.js";
-import { DeleteButton } from "./DeleteButton.jsx";
+
 import "./style.scss";
 
 export const Alarm = props => {
   const { position, showDeleteButton, grid } = props;
 
-  const [alarmHours, setAlarmHours] = useState("OFF");
   const currentTime = useCurrentTime();
+  const [alarmHours, setAlarmHours] = useState("OFF");
   const [alarmMinutes, setAlarmMinutes] = useState(0);
   const [alarmTime, setAlarmTime] = useState();
   const [alarmActive, setAlarmActive] = useState(false);
@@ -37,10 +41,6 @@ export const Alarm = props => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [alarmHours, alarmMinutes]);
 
-  const handleAlarmOff = () => {
-    setAlarmActive(false);
-  };
-
   return (
     <div className={`alarm alarm__position--${position}`}>
       <Clock time={currentTime} grid={grid} />
@@ -50,15 +50,12 @@ export const Alarm = props => {
         handleMinuteChange={e => setAlarmMinutes(e.target.value)}
       />
 
-      <div
-        className={`alarm-off-container ${
-          alarmActive ? "alarm-off-container--active" : ""
-        }`}
-      >
-        <div className="alarm-off-button" onClick={handleAlarmOff}>
-          ALARM OFF
-        </div>
-      </div>
+      {/* TODO: Debugging alarm function */}
+      <button onClick={() => setAlarmActive(true)}>Activate</button>
+
+      <OffButton alarmActive={alarmActive} setAlarmActive={setAlarmActive} />
+
+      {alarmActive && <AlarmSound />}
 
       {showDeleteButton && <DeleteButton {...props} />}
     </div>
