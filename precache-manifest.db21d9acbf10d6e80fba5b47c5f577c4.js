@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "74f5fc1511175964cc4924fd663e92b0",
+    "revision": "6a41b18436f4a705aabc4f38ecd97b3b",
     "url": "/alarm-clock/index.html"
   },
   {
