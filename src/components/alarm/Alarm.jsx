@@ -43,15 +43,13 @@ export const Alarm = props => {
 
   return (
     <div className={`alarm alarm__position--${position}`}>
-      <Clock time={currentTime} grid={grid} />
+      <Clock className="alarm__clock" time={currentTime} grid={grid} />
 
       <AlarmOptions
+        className="alarm__options"
         handleHourChange={e => setAlarmHours(e.target.value)}
         handleMinuteChange={e => setAlarmMinutes(e.target.value)}
       />
-
-      {/* TODO: Debugging alarm function */}
-      <button onClick={() => setAlarmActive(true)}>Activate</button>
 
       <OffButton alarmActive={alarmActive} setAlarmActive={setAlarmActive} />
 
